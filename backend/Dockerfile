@@ -1,6 +1,7 @@
 FROM node:22-alpine AS build
 
 WORKDIR /app
+ENV DATABASE_URL="postgresql://postgres:postgres@localhost:5432/hrm"
 
 COPY package*.json ./
 COPY prisma ./prisma
