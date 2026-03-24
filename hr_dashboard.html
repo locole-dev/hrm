@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Architect HRM - Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-secondary": "#ffffff",
+                        "primary-fixed-dim": "#abc7ff",
+                        "surface-variant": "#e0e3e5",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "on-secondary-container": "#57657a",
+                        "primary-fixed": "#d7e2ff",
+                        "tertiary-fixed": "#ffdbcc",
+                        "tertiary-fixed-dim": "#ffb694",
+                        "tertiary-container": "#833301",
+                        "error-container": "#ffdad6",
+                        "outline": "#737783",
+                        "on-secondary-fixed-variant": "#3a485b",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f7f9fb",
+                        "surface": "#f7f9fb",
+                        "secondary-fixed-dim": "#b9c7df",
+                        "on-error": "#ffffff",
+                        "secondary-container": "#d5e3fc",
+                        "background": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "inverse-on-surface": "#eff1f3",
+                        "surface-tint": "#255dad",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-container": "#9bbdff",
+                        "secondary": "#515f74",
+                        "primary-container": "#004a99",
+                        "on-tertiary-fixed": "#351000",
+                        "surface-container-low": "#f2f4f6",
+                        "inverse-primary": "#abc7ff",
+                        "on-secondary-fixed": "#0d1c2e",
+                        "on-tertiary-fixed-variant": "#7b2f00",
+                        "outline-variant": "#c2c6d3",
+                        "primary": "#00346f",
+                        "tertiary": "#5f2200",
+                        "surface-container-high": "#e6e8ea",
+                        "on-primary-fixed": "#001b3f",
+                        "on-primary-fixed-variant": "#00458f",
+                        "on-surface": "#191c1e",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary": "#ffffff",
+                        "secondary-fixed": "#d5e3fc",
+                        "on-background": "#191c1e",
+                        "on-tertiary-container": "#ffa77e",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface-variant": "#424751"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope", "sans-serif"],
+                        "body": ["Inter", "sans-serif"],
+                        "label": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .tonal-shift-based-boundaries {
+            background-color: #f2f4f6;
+        }
+    </style>
+</head>
+<body class="bg-surface font-body text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 bg-slate-50 dark:bg-slate-900 w-64 border-r-0">
+<div class="px-6 py-8">
+<h1 class="text-xl font-extrabold tracking-tight text-[#00346f] dark:text-[#f7f9fb] font-headline">Architect HRM</h1>
+<p class="text-xs text-slate-500 font-medium uppercase tracking-widest mt-1">Admin Console</p>
+</div>
+<nav class="flex-1 flex flex-col gap-1 px-3">
+<!-- Active Tab: Dashboard -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#e0e3e5] dark:bg-slate-800 text-[#00346f] dark:text-[#f7f9fb] font-semibold border-r-4 border-[#00346f]" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-label text-sm tracking-wide">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="font-label text-sm tracking-wide">Employees</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="font-label text-sm tracking-wide">Structure</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="font-label text-sm tracking-wide">Attendance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="event_busy">event_busy</span>
+<span class="font-label text-sm tracking-wide">Leave</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="font-label text-sm tracking-wide">Payroll</span>
+</a>
+</nav>
+<div class="mt-auto px-3 pb-8">
+<button class="w-full flex items-center justify-center gap-2 bg-gradient-to-br from-primary to-primary-container text-white py-3 rounded-xl font-bold text-sm mb-6 shadow-lg shadow-primary/20 transition-transform active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="add">add</span>
+                New Hire
+            </button>
+<div class="flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-label text-sm tracking-wide">Settings</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+<span class="font-label text-sm tracking-wide">Support</span>
+</a>
+</div>
+<div class="mt-6 px-4 py-3 bg-surface-container-low rounded-xl flex items-center gap-3">
+<img alt="HR Manager Profile" class="w-10 h-10 rounded-full object-cover" data-alt="Portrait of a professional HR manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2JrsPGCEiFh9N0sANKGEV9zKqpURIWgnW9gfWRPbVkSatBYrRbRPAtk8gyS0oHygH_xstPkiBlTuUEDZ9OM5__dNRrJm9kqRRE0vqdbxED8nXroH3iEB3czCxlVrffQphC0heIJTnNnQm6GhKlR1ZmeWqSYgwFqQ4o_GWOzcLq9zCHb_lRfqWeiF7RnGUIqgg5kTn1ZhTRdzYe7uazgJtbViSX5X7uWYnQOVb61o-kPYQ4JhsN0S8zh5DxZNREVa8RNc0zV4VyGY"/>
+<div class="overflow-hidden">
+<p class="text-xs font-bold truncate">Alex Sterling</p>
+<p class="text-[10px] text-slate-500 truncate">Senior Admin</p>
+</div>
+</div>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-30 flex justify-between items-center px-8 py-4 ml-64 max-w-[calc(100%-16rem)] bg-[#f7f9fb]/80 backdrop-blur-xl shadow-sm">
+<div class="flex items-center gap-8 flex-1">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-xl pl-10 pr-4 py-2 text-sm focus:ring-2 focus:ring-primary/20 transition-all" placeholder="Search directory..." type="text"/>
+</div>
+<nav class="hidden lg:flex items-center gap-6">
+<a class="text-slate-500 font-medium hover:text-[#00346f] transition-opacity" href="#">Directory</a>
+<a class="text-slate-500 font-medium hover:text-[#00346f] transition-opacity" href="#">Reports</a>
+<a class="text-slate-500 font-medium hover:text-[#00346f] transition-opacity" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="flex items-center gap-2 px-4 py-2 text-sm font-semibold text-[#00346f] hover:bg-surface-container-low rounded-xl transition-all">
+                Quick Actions
+                <span class="material-symbols-outlined text-lg" data-icon="expand_more">expand_more</span>
+</button>
+<div class="h-6 w-[1px] bg-outline-variant/30"></div>
+<div class="flex items-center gap-1">
+<button class="p-2 rounded-full hover:bg-surface-container-low text-slate-600">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="p-2 rounded-full hover:bg-surface-container-low text-slate-600">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 p-8 min-h-screen">
+<!-- Dashboard Header -->
+<header class="mb-12">
+<h2 class="font-headline text-4xl font-extrabold tracking-tight text-on-surface mb-2">Workspace Overview</h2>
+<p class="text-on-surface-variant font-medium">Welcome back, Sterling. Here’s what’s happening in Architect HRM today.</p>
+</header>
+<!-- Bento Grid: Key Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+<!-- Metric 1: Headcount -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-container rounded-lg text-primary">
+<span class="material-symbols-outlined" data-icon="groups">groups</span>
+</div>
+<span class="text-xs font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded-full">+4.2%</span>
+</div>
+<h3 class="text-label text-sm font-semibold text-on-surface-variant mb-1">Total Headcount</h3>
+<p class="font-headline text-3xl font-extrabold">1,284</p>
+<div class="mt-4 flex items-center gap-2">
+<div class="flex -space-x-2">
+<img alt="Team member" class="h-6 w-6 rounded-full border-2 border-white" data-alt="Employee headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCuqomk5VGVLI8OISjx4-pD3Hb4z2HIhTQcqbYF9jQuUp5A7gcmcm-Cx6CMOr8uPUANHF8YrukZWI8TX5_enSuALRYrLjobEt92wN2RVQKviV_vmAcv9wOWVMhMHafDQ88N5OSSXAGO13N6pAqPPkpmMreRZ6Lj8mq0a8HTOfUE4e5EqhmBsTr4PCVsFTNE3_CA_NkR2LXerM0fiGqW1r2mt6AuZZlMwTtkrWgThmkBAfBMXqxP80ys2zP2JsW6gnjVCsruHoGwN4s"/>
+<img alt="Team member" class="h-6 w-6 rounded-full border-2 border-white" data-alt="Employee headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAdgUsT2lcYwySabX_8rLLvLVZe99MasJvGKcwkNGhEDtnK0AHkgvmbwHxZygTs1VBDQaf4Tvagz2j5m-cufKgd1tejxVByfN_ZLi3N2HRIg_hAgckHGSfOYdX5OzTkVJ7T3MNmhVsIRxNRlmMWxFd1-PR9Cohl7SOw5qC00LU5-CtgKvHkyahuk1aC_iazk1j7dh9x8ozZ1KGkzxuHUa0BZamgkcYwAb1yz5tGh0yxc6vW8F8wZfHWYyPPdK1EOF0tUCrFvfmR99s"/>
+<img alt="Team member" class="h-6 w-6 rounded-full border-2 border-white" data-alt="Employee headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBMCq6slt322qWmFnB3qKcdhAOY1V_22jB1U5Tmj5iJT-d4qNQ6VQuI3CFaj8gXIVf_eXWVzJNg_NDItzFsaDvjLiaKBECV19Qak4OCVTZV8Wr7KREzkgxeyafsIA6IHsaVuHZ5OkjJhDmW0IOOPXLAqtlU44pOBTH_s3nxJVssNCV0WELJjQa3R3eLfZcXAwElWGf2mZcsLV93l7Mg8iAm8t6s3J5bDXsAz9l3LixJe1qbI9sfnY-hhw_EXmqz-IM5z-yEE-NvDF4"/>
+</div>
+<span class="text-[10px] font-medium text-slate-400">+12 this month</span>
+</div>
+</div>
+<!-- Metric 2: New Hires -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-tertiary-fixed text-on-tertiary-fixed-variant rounded-lg">
+<span class="material-symbols-outlined" data-icon="person_add">person_add</span>
+</div>
+<span class="material-symbols-outlined text-slate-300" data-icon="more_horiz">more_horiz</span>
+</div>
+<h3 class="text-label text-sm font-semibold text-on-surface-variant mb-1">New Hires</h3>
+<p class="font-headline text-3xl font-extrabold">24</p>
+<p class="mt-4 text-[10px] font-medium text-slate-400">Onboarding status: 85% completed</p>
+</div>
+<!-- Metric 3: Attendance Rate -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-secondary-container text-primary rounded-lg">
+<span class="material-symbols-outlined" data-icon="calendar_month">calendar_month</span>
+</div>
+<span class="text-xs font-bold text-amber-600 bg-amber-50 px-2 py-1 rounded-full">-0.8%</span>
+</div>
+<h3 class="text-label text-sm font-semibold text-on-surface-variant mb-1">Attendance Trend</h3>
+<p class="font-headline text-3xl font-extrabold">94.2%</p>
+<div class="mt-5 w-full bg-surface-container h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full w-[94.2%]"></div>
+</div>
+</div>
+<!-- Metric 4: Birthdays -->
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-sm">
+<div class="flex justify-between items-start mb-4">
+<div class="p-3 bg-primary-fixed text-primary rounded-lg">
+<span class="material-symbols-outlined" data-icon="cake">cake</span>
+</div>
+<div class="h-2 w-2 rounded-full bg-error animate-pulse"></div>
+</div>
+<h3 class="text-label text-sm font-semibold text-on-surface-variant mb-1">Birthdays Today</h3>
+<p class="font-headline text-3xl font-extrabold">3</p>
+<p class="mt-4 text-[10px] font-medium text-primary font-bold hover:underline cursor-pointer">Send team celebrations</p>
+</div>
+</div>
+<!-- Section Grid: Focused Content -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Left Column: Attendance Trends (Editorial Approach) -->
+<div class="lg:col-span-2 space-y-8">
+<section class="bg-surface-container-low rounded-2xl p-8">
+<div class="flex justify-between items-center mb-10">
+<div>
+<h3 class="font-headline text-2xl font-bold text-on-surface">Punctuality Analysis</h3>
+<p class="text-sm text-on-surface-variant">Bi-weekly reporting period (Sept 01 - Sept 14)</p>
+</div>
+<div class="flex gap-2">
+<button class="px-3 py-1 text-xs font-bold bg-surface-container-highest rounded-lg">Weekly</button>
+<button class="px-3 py-1 text-xs font-bold text-slate-400">Monthly</button>
+</div>
+</div>
+<!-- Custom Visual Chart Representation -->
+<div class="flex items-end justify-between h-48 px-4">
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full max-w-[40px] bg-outline-variant/20 h-32 rounded-t-md relative group">
+<div class="absolute bottom-0 w-full bg-primary h-[85%] rounded-t-md group-hover:bg-primary-container transition-all"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">MON</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full max-w-[40px] bg-outline-variant/20 h-32 rounded-t-md relative group">
+<div class="absolute bottom-0 w-full bg-primary h-[92%] rounded-t-md group-hover:bg-primary-container transition-all"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">TUE</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full max-w-[40px] bg-outline-variant/20 h-32 rounded-t-md relative group">
+<div class="absolute bottom-0 w-full bg-primary h-[78%] rounded-t-md group-hover:bg-primary-container transition-all"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">WED</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full max-w-[40px] bg-outline-variant/20 h-32 rounded-t-md relative group">
+<div class="absolute bottom-0 w-full bg-primary h-[95%] rounded-t-md group-hover:bg-primary-container transition-all"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">THU</span>
+</div>
+<div class="flex flex-col items-center gap-2 flex-1">
+<div class="w-full max-w-[40px] bg-outline-variant/20 h-32 rounded-t-md relative group">
+<div class="absolute bottom-0 w-full bg-primary h-[88%] rounded-t-md group-hover:bg-primary-container transition-all"></div>
+</div>
+<span class="text-[10px] font-bold text-slate-400">FRI</span>
+</div>
+</div>
+<div class="mt-10 grid grid-cols-2 gap-4">
+<div class="p-4 bg-surface-container-lowest rounded-xl flex items-center gap-4">
+<div class="text-primary">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Avg. Login</p>
+<p class="font-bold text-lg">08:52 AM</p>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-xl flex items-center gap-4">
+<div class="text-tertiary">
+<span class="material-symbols-outlined" data-icon="warning">warning</span>
+</div>
+<div>
+<p class="text-[10px] font-bold text-slate-400 uppercase tracking-wider">Late Arrivals</p>
+<p class="font-bold text-lg">14 Employees</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Pending Leave Requests -->
+<section>
+<div class="flex justify-between items-end mb-6">
+<h3 class="font-headline text-2xl font-bold">Leave Requests</h3>
+<a class="text-xs font-bold text-primary flex items-center gap-1" href="#">
+                            View All <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+<div class="space-y-3">
+<!-- Pulse Card Pattern -->
+<div class="bg-surface-container-lowest p-5 rounded-xl border-l-4 border-tertiary shadow-sm flex items-center justify-between group hover:bg-slate-50 transition-all">
+<div class="flex items-center gap-4">
+<img alt="Employee" class="h-12 w-12 rounded-full object-cover" data-alt="Female employee professional photo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCM1E49exv_fzv1y8V11xOBDIp-3R76a0zZka0bgzonVg79d3Yf7oLetsMuJ0e8vjmNjw3Q-QFhb82PFqFs1mQ-6uHxZNajszUcyWoN4LvUz7wPj-c6YcgNQoQDWtRg8v41o-Ri9genBURNCBbZqONx5vzEC2dkPEgdi70NrIVoxigxMn5kCsBmh_QkKLg89g-iT0lYnaWzgUYYwUNz_PQG7Sdurva4ftCa_ReNEw63pVpd6ndMx5Ahwe4s-HVVdoJayT_iQP534RM"/>
+<div>
+<h4 class="font-bold text-on-surface">Maya Ishikawa</h4>
+<p class="text-xs text-on-surface-variant">Sick Leave • 2 Days (Oct 12 - 13)</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<button class="p-2 text-error hover:bg-error/10 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<button class="px-6 py-2 bg-primary text-white text-xs font-bold rounded-lg shadow-md hover:bg-primary-container transition-all">
+                                    Approve
+                                </button>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-5 rounded-xl border-l-4 border-primary shadow-sm flex items-center justify-between group hover:bg-slate-50 transition-all">
+<div class="flex items-center gap-4">
+<div class="h-12 w-12 rounded-full bg-primary-fixed flex items-center justify-center font-bold text-primary">JD</div>
+<div>
+<h4 class="font-bold text-on-surface">Jordan Davies</h4>
+<p class="text-xs text-on-surface-variant">Annual Vacation • 5 Days (Nov 01 - 05)</p>
+</div>
+</div>
+<div class="flex items-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-2 text-error hover:bg-error/10 rounded-full transition-colors">
+<span class="material-symbols-outlined" data-icon="close">close</span>
+</button>
+<button class="px-6 py-2 bg-primary text-white text-xs font-bold rounded-lg shadow-md transition-all">
+                                    Approve
+                                </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Right Column: Sidebar Widgets -->
+<div class="space-y-8">
+<!-- Upcoming Birthdays Widget -->
+<div class="bg-surface-container-highest rounded-2xl p-6">
+<h4 class="font-headline text-lg font-bold mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="celebration">celebration</span>
+                        Birthdays this week
+                    </h4>
+<div class="space-y-6">
+<div class="flex items-center gap-3">
+<div class="relative">
+<img alt="Birthday person" class="h-10 w-10 rounded-full grayscale hover:grayscale-0 transition-all cursor-pointer" data-alt="Male employee headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwHzbjSbOGSvnmneyLayqwCoWTzDqS230muu9mcnKAMnuDU-sBDMNW25K-4qpDZ3Y4mi0YPpEFZh-9X9Vdb8WeuG98hdA2sufSNHURQoTRz8Ng-44NdN2XXx2DGlyvWQkgWXnqoRSZAi52945FzccsG0RSbwQFKy7J0vrozMAn1PLZudzn3Qxy-QxNsDpT4CP5-liAHKIJiBwnLCFXtE6KCdaslilpP0AIuX3RAqruo30CFZFo3ITWkDDQfxWBus23is8VLZg93gg"/>
+<div class="absolute -top-1 -right-1 bg-tertiary-fixed w-4 h-4 rounded-full flex items-center justify-center text-[10px]">🎂</div>
+</div>
+<div>
+<p class="text-sm font-bold">Liam Henderson</p>
+<p class="text-[10px] font-medium text-slate-500">Today • Design Team</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<img alt="Birthday person" class="h-10 w-10 rounded-full grayscale" data-alt="Female employee headshot" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYlWPFNy0RUTs5aQ2HQnM0ULn6QqyXY7WbfIwjz0sPvNOikVVqvHEVeuVWT4f7wGFfMGLTIMhqqg3XCXEuOdZViFRxyQa8BKiVqgPx-dy0DGc87PHhfhpZBnNMvq7_56IXEAZO6df25Q-LcIImXkNYcOMokikca5JkOk1cokQPXCMAhHMVIffVM8gzfbbft2C7GSFZWYnv0CVLrKi67Y1QH_-dCBIX_81r_vP-_Yfra7JfbE3Mo7X5RKFlj_q44I81QP4msIy-r90"/>
+<div>
+<p class="text-sm font-bold">Sofia Chen</p>
+<p class="text-[10px] font-medium text-slate-500">Sept 18 • Product Ops</p>
+</div>
+</div>
+</div>
+<button class="w-full mt-8 py-3 bg-white/50 border border-white/20 backdrop-blur rounded-xl text-xs font-bold text-primary hover:bg-white/80 transition-all">
+                        Schedule Announcement
+                    </button>
+</div>
+<!-- Recent Activity Feed -->
+<div class="p-6">
+<h4 class="font-headline text-lg font-bold mb-6">Recent Activity</h4>
+<div class="relative space-y-8 before:absolute before:inset-0 before:ml-4 before:-translate-x-px before:h-full before:w-0.5 before:bg-gradient-to-b before:from-outline-variant/30 before:via-outline-variant/30 before:to-transparent">
+<div class="relative flex items-start gap-6">
+<div class="absolute left-0 mt-1 h-2 w-2 rounded-full bg-primary ring-4 ring-background"></div>
+<div class="ml-8">
+<p class="text-xs font-bold text-on-surface">Payroll finalized</p>
+<p class="text-[10px] text-slate-500">August payroll has been processed successfully.</p>
+<time class="text-[10px] font-medium text-primary-fixed-dim mt-1 block">2 hours ago</time>
+</div>
+</div>
+<div class="relative flex items-start gap-6">
+<div class="absolute left-0 mt-1 h-2 w-2 rounded-full bg-slate-300 ring-4 ring-background"></div>
+<div class="ml-8">
+<p class="text-xs font-bold text-on-surface">New Policy Updated</p>
+<p class="text-[10px] text-slate-500">Remote work guidelines v2.1 published.</p>
+<time class="text-[10px] font-medium text-slate-400 mt-1 block">Yesterday</time>
+</div>
+</div>
+</div>
+</div>
+<!-- Glassmorphism Quick Info -->
+<div class="relative overflow-hidden rounded-2xl p-6 bg-primary text-white">
+<div class="absolute top-0 right-0 -mr-8 -mt-8 w-32 h-32 bg-white/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<h5 class="text-xs font-bold opacity-60 uppercase tracking-widest mb-4">Storage Usage</h5>
+<div class="flex items-end gap-2 mb-2">
+<span class="text-3xl font-extrabold">74%</span>
+<span class="text-xs font-medium opacity-60 mb-1">of 1TB</span>
+</div>
+<div class="w-full bg-white/20 h-1.5 rounded-full mb-6">
+<div class="bg-white h-full w-[74%] rounded-full"></div>
+</div>
+<button class="text-[10px] font-bold py-2 px-4 bg-white text-primary rounded-lg">Manage Cloud</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

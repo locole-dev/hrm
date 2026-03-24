@@ -1,0 +1,13 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+.env
+.env.*
+!.env.example
+!.env.production.example
+
+logs/
+*.log
+npm-debug.log*

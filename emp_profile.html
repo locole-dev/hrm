@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Employee Profile | Architect HRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "outline": "#737783",
+              "on-tertiary-container": "#ffa77e",
+              "primary-container": "#004a99",
+              "on-error-container": "#93000a",
+              "inverse-primary": "#abc7ff",
+              "surface-dim": "#d8dadc",
+              "error-container": "#ffdad6",
+              "surface-container-lowest": "#ffffff",
+              "surface": "#f7f9fb",
+              "primary-fixed": "#d7e2ff",
+              "on-tertiary-fixed": "#351000",
+              "inverse-on-surface": "#eff1f3",
+              "background": "#f7f9fb",
+              "surface-container": "#eceef0",
+              "primary": "#00346f",
+              "on-surface-variant": "#424751",
+              "on-secondary-fixed": "#0d1c2e",
+              "on-secondary-container": "#57657a",
+              "tertiary-fixed-dim": "#ffb694",
+              "outline-variant": "#c2c6d3",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "secondary-fixed": "#d5e3fc",
+              "secondary-container": "#d5e3fc",
+              "secondary": "#515f74",
+              "on-tertiary": "#ffffff",
+              "on-error": "#ffffff",
+              "on-primary-container": "#9bbdff",
+              "surface-bright": "#f7f9fb",
+              "surface-tint": "#255dad",
+              "on-primary-fixed": "#001b3f",
+              "inverse-surface": "#2d3133",
+              "secondary-fixed-dim": "#b9c7df",
+              "tertiary": "#5f2200",
+              "on-secondary-fixed-variant": "#3a485b",
+              "on-background": "#191c1e",
+              "surface-variant": "#e0e3e5",
+              "error": "#ba1a1a",
+              "on-primary": "#ffffff",
+              "surface-container-high": "#e6e8ea",
+              "tertiary-fixed": "#ffdbcc",
+              "surface-container-low": "#f2f4f6",
+              "primary-fixed-dim": "#abc7ff",
+              "on-primary-fixed-variant": "#00458f",
+              "on-surface": "#191c1e",
+              "surface-container-highest": "#e0e3e5",
+              "tertiary-container": "#833301",
+              "on-secondary": "#ffffff"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      body {
+        background-color: #f7f9fb;
+        color: #191c1e;
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar -->
+<aside class="fixed left-0 h-screen w-64 z-50 bg-slate-50 flex flex-col p-6 space-y-2 border-r border-slate-200/20">
+<div class="mb-10">
+<h1 class="text-lg font-black font-manrope text-blue-900">Architect HRM</h1>
+<p class="text-xs text-slate-500 font-medium tracking-wide">Admin Console</p>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-blue-900 transition-all font-inter text-sm font-medium tracking-wide rounded-md" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-blue-900 text-white rounded-md shadow-sm font-inter text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined">groups</span>
+<span>Directory</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-blue-900 transition-all font-inter text-sm font-medium tracking-wide rounded-md" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Payroll</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-blue-900 transition-all font-inter text-sm font-medium tracking-wide rounded-md" href="#">
+<span class="material-symbols-outlined">history_toggle_off</span>
+<span>Time Tracking</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-blue-900 transition-all font-inter text-sm font-medium tracking-wide rounded-md" href="#">
+<span class="material-symbols-outlined">trending_up</span>
+<span>Performance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-blue-900 transition-all font-inter text-sm font-medium tracking-wide rounded-md" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="pt-6 mt-6 border-t border-slate-200/50 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-blue-900 transition-all font-inter text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+<span>Support</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-600 hover:text-blue-900 transition-all font-inter text-sm font-medium tracking-wide" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Logout</span>
+</a>
+</div>
+</aside>
+<!-- TopAppBar -->
+<header class="fixed top-0 w-full z-40 bg-white/80 backdrop-blur-xl flex justify-between items-center px-8 h-16 ml-64">
+<div class="flex items-center gap-4">
+<div class="flex items-center bg-slate-100 rounded-full px-4 py-1.5 gap-2">
+<span class="material-symbols-outlined text-slate-400 text-sm">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-64 placeholder:text-slate-400" placeholder="Search employees..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-6 pr-64">
+<button class="relative text-slate-500 hover:text-blue-900 transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+<span class="absolute top-0 right-0 w-2 h-2 bg-error rounded-full border-2 border-white"></span>
+</button>
+<button class="text-slate-500 hover:text-blue-900 transition-colors">
+<span class="material-symbols-outlined">help_outline</span>
+</button>
+<div class="flex items-center gap-3 pl-4 border-l border-slate-200">
+<img alt="User Profile Avatar" class="w-8 h-8 rounded-full object-cover" data-alt="Corporate professional headshot for admin user profile" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBuiDw-et7gGQ9WcD6nV5bcXDrcIzdtR7B84FdQHylvJgn4j05vmjuhxjm7PoqZlSvMvxzrp8jVvVeA_xhiMy6GHz_YCU6s5k2D14nJ9ltBdPgXguIzgvkky3oebHDPxDFVnZzz07SvNmXTkuIzsH8rmRxmo9kjKWPeTgfzz1b4e4lzaOn7A5cFNwu23VfeqrrYFV7Dxaz0NIRjnH3uOnCYflrT_IHB0NOg3UPiPFNMEdnIzJVMBOxndlN7U_VrLHQ7Urb29afBjYQ"/>
+<span class="font-manrope text-sm font-semibold text-blue-900">Alex Rivers</span>
+</div>
+</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="max-w-7xl mx-auto px-10 py-12">
+<!-- Breadcrumbs & Header Actions -->
+<div class="flex justify-between items-end mb-12">
+<div>
+<nav class="flex items-center gap-2 text-xs font-label text-outline mb-4 tracking-widest uppercase">
+<span>Directory</span>
+<span class="material-symbols-outlined text-[10px]">chevron_right</span>
+<span class="text-primary font-bold">Employee Profile</span>
+</nav>
+<h2 class="font-headline text-4xl font-extrabold tracking-tight text-primary">Julianne Sterling</h2>
+<p class="font-body text-on-surface-variant mt-2">Senior Design Architect • Employee ID: #AR-9920</p>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2.5 rounded-md text-sm font-semibold border border-outline-variant text-on-surface-variant hover:bg-surface-container-high transition-all">
+                        Archive Record
+                    </button>
+<button class="px-5 py-2.5 rounded-md text-sm font-semibold bg-gradient-to-br from-primary to-primary-container text-on-primary shadow-sm hover:opacity-90 transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">edit</span>
+                        Edit Profile
+                    </button>
+</div>
+</div>
+<!-- Bento Layout Profile -->
+<div class="grid grid-cols-12 gap-8">
+<!-- Left Column: Key Identity & Status -->
+<div class="col-span-12 lg:col-span-4 space-y-8">
+<!-- Identity Card -->
+<div class="bg-surface-container-lowest p-8 rounded-xl relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4">
+<span class="px-3 py-1 rounded-full bg-primary-fixed/40 text-primary text-[10px] font-bold uppercase tracking-widest">Active</span>
+</div>
+<div class="relative z-10 text-center mb-8">
+<div class="inline-block relative">
+<img alt="Julianne Sterling" class="w-32 h-32 rounded-xl object-cover shadow-xl border-4 border-surface" data-alt="Close-up professional headshot of female employee with warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA7Yt50SXDlyjCx6qP5QylL_1XpNwnirCcjv2VmN539az_9hovZxa1_sKRmQ_vObpQMzGiK9ybyDXWe1iWvZsEnpulsskuGaEf4uNpWtqJSnD2wv-W6ZHdS48WgOfpEKwZS-bhItt2nujVBwEaRfvoRs0MeSmufokHBcxTHuYtE7b7PiugrRKZA0arAiTLz6kCWI0oBKT3LJs9aldoM3U9uV8DpOFJkdYwmB6K3fS6Xw1vXYswZJIqtPgpsSWnWdK271PDeIy9pYW0"/>
+<div class="absolute -bottom-2 -right-2 bg-white p-2 rounded-lg shadow-md">
+<span class="material-symbols-outlined text-tertiary-container text-lg" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<h3 class="font-headline text-xl font-bold mt-6 text-primary">Julianne Sterling</h3>
+<p class="text-on-surface-variant font-medium text-sm">London Studio • Product Team</p>
+</div>
+<div class="space-y-4 pt-6 border-t border-surface-container">
+<div class="flex justify-between items-center text-sm">
+<span class="text-outline">Email</span>
+<span class="font-semibold text-on-surface">j.sterling@arch.io</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-outline">Phone</span>
+<span class="font-semibold text-on-surface">+44 20 7946 0122</span>
+</div>
+<div class="flex justify-between items-center text-sm">
+<span class="text-outline">Work Mode</span>
+<span class="font-semibold text-on-surface">Hybrid (Tue/Wed)</span>
+</div>
+</div>
+</div>
+<!-- Reporting Line -->
+<div class="bg-surface-container-low p-8 rounded-xl border-l-4 border-primary">
+<h4 class="font-headline text-sm font-bold text-primary mb-6 uppercase tracking-wider">Direct Manager</h4>
+<div class="flex items-center gap-4">
+<img alt="Manager" class="w-12 h-12 rounded-lg object-cover" data-alt="Managerial headshot for reporting structure context" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDxvuOpjR9Qm1_6BVUHwujloX8Xf_6PkM2vwCWs_BIdBGH5HvI1iU98CPME8ryc1zKrk5Amy-DEm-qmVXowTa9CHZmVE7qp-7-dK9Io9Nocgc8Khx8wUsCPjLGH4PiDNysZe7eBpaamCqz0b0QlaiEXhDRnC62j9odRLOC04vDUvUpJepMCNZPbEJI3KY0ImJaliJQHF_HbLFJHFEarnoDwLAMYnkKQ9JAaKfXZ_cnZehf17-HOMPogIH_7JKuJXR0CmFj7MIX5yNI"/>
+<div>
+<p class="font-headline font-bold text-on-surface">Marcus Thorne</p>
+<p class="text-xs text-outline font-medium">Head of Architecture</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Deep Data -->
+<div class="col-span-12 lg:col-span-8 space-y-8">
+<!-- Navigation Tabs for Profile Sections -->
+<div class="flex gap-8 border-b border-surface-container-high pb-4 overflow-x-auto whitespace-nowrap scrollbar-hide">
+<button class="text-primary font-bold border-b-2 border-primary pb-4 transition-all">Overview</button>
+<button class="text-outline hover:text-primary font-medium pb-4 transition-all">Contracts &amp; Payroll</button>
+<button class="text-outline hover:text-primary font-medium pb-4 transition-all">Performance History</button>
+<button class="text-outline hover:text-primary font-medium pb-4 transition-all">Learning &amp; Certs</button>
+<button class="text-outline hover:text-primary font-medium pb-4 transition-all">Equipment</button>
+</div>
+<!-- Personal Information Grid -->
+<div class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex justify-between items-center mb-8">
+<h4 class="font-headline text-lg font-bold text-primary">Personal &amp; Contact Information</h4>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">edit_square</span>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-y-8 gap-x-12">
+<div class="space-y-1">
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">Full Legal Name</p>
+<p class="font-body text-on-surface font-medium">Julianne Elizabeth Sterling</p>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">Date of Birth</p>
+<p class="font-body text-on-surface font-medium">Oct 14, 1988 (35 years old)</p>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">Residential Address</p>
+<p class="font-body text-on-surface font-medium leading-relaxed">42 Baker's mews, Marylebone<br/>London, NW1 6XE</p>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">Nationality</p>
+<p class="font-body text-on-surface font-medium">British</p>
+</div>
+<div class="space-y-1">
+<p class="text-[10px] font-bold text-outline uppercase tracking-widest">Emergency Contact</p>
+<p class="font-body text-on-surface font-medium">Robert Sterling (Spouse)</p>
+<p class="text-xs text-outline">+44 77 1234 5678</p>
+</div>
+</div>
+</div>
+<!-- Job/Position Timeline -->
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h4 class="font-headline text-lg font-bold text-primary mb-8">Employment Evolution</h4>
+<div class="space-y-8">
+<!-- Timeline Item -->
+<div class="flex gap-6 relative">
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full bg-primary mt-1.5 shadow-[0_0_0_4px_rgba(0,52,111,0.1)]"></div>
+<div class="w-px h-full bg-outline-variant mt-2"></div>
+</div>
+<div>
+<div class="flex items-center gap-3">
+<p class="font-headline font-bold text-on-surface">Senior Design Architect</p>
+<span class="px-2 py-0.5 bg-tertiary-fixed text-on-tertiary-fixed-variant text-[10px] font-bold rounded">Current Role</span>
+</div>
+<p class="text-xs text-outline font-medium mt-1">Mar 2021 — Present • 3 years 2 months</p>
+<p class="text-sm text-on-surface-variant mt-3 leading-relaxed">Lead architect for high-valuation commercial developments in London and Berlin. Management of a 5-person junior design team.</p>
+</div>
+</div>
+<!-- Timeline Item -->
+<div class="flex gap-6 relative">
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full bg-outline-variant mt-1.5"></div>
+<div class="w-px h-full bg-outline-variant mt-2"></div>
+</div>
+<div>
+<p class="font-headline font-bold text-on-surface-variant">Mid-Level Architect</p>
+<p class="text-xs text-outline font-medium mt-1">Feb 2018 — Mar 2021 • 3 years 1 month</p>
+<p class="text-sm text-on-surface-variant mt-3 leading-relaxed">Specialized in façade design and sustainable building materials integration for the Northern Europe division.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Active Contracts & Documents -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface-container-low p-8 rounded-xl">
+<h4 class="font-headline text-sm font-bold text-primary mb-6 uppercase tracking-wider">Active Contract</h4>
+<div class="space-y-4">
+<div class="flex items-start gap-4 p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/10">
+<span class="material-symbols-outlined text-primary-container">article</span>
+<div>
+<p class="text-sm font-bold text-on-surface">Permanent Full-Time</p>
+<p class="text-[10px] text-outline mt-1 font-medium">Signed: Feb 12, 2018</p>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/10 space-y-3">
+<div class="flex justify-between items-center text-xs">
+<span class="text-outline">Base Salary</span>
+<span class="font-bold text-on-surface">£84,500 / yr</span>
+</div>
+<div class="flex justify-between items-center text-xs">
+<span class="text-outline">Notice Period</span>
+<span class="font-bold text-on-surface">3 Months</span>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low p-8 rounded-xl">
+<div class="flex justify-between items-center mb-6">
+<h4 class="font-headline text-sm font-bold text-primary uppercase tracking-wider">Key Documents</h4>
+<button class="text-primary-container text-[10px] font-bold uppercase tracking-widest hover:underline">View All</button>
+</div>
+<div class="space-y-3">
+<div class="flex items-center justify-between p-3 hover:bg-surface-container-highest transition-colors rounded-lg cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-error" style="font-variation-settings: 'FILL' 1;">picture_as_pdf</span>
+<span class="text-xs font-medium text-on-surface">Passport_Scan.pdf</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-sm">download</span>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-surface-container-highest transition-colors rounded-lg cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">picture_as_pdf</span>
+<span class="text-xs font-medium text-on-surface">Degree_Certificate.pdf</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-sm">download</span>
+</div>
+<div class="flex items-center justify-between p-3 hover:bg-surface-container-highest transition-colors rounded-lg cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">description</span>
+<span class="text-xs font-medium text-on-surface">Employment_Offer.doc</span>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:text-primary text-sm">download</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

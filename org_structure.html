@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Organization Structure - Architect HRM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-secondary": "#ffffff",
+              "primary-fixed-dim": "#abc7ff",
+              "surface-variant": "#e0e3e5",
+              "error": "#ba1a1a",
+              "on-primary": "#ffffff",
+              "inverse-surface": "#2d3133",
+              "on-secondary-container": "#57657a",
+              "primary-fixed": "#d7e2ff",
+              "tertiary-fixed": "#ffdbcc",
+              "tertiary-fixed-dim": "#ffb694",
+              "tertiary-container": "#833301",
+              "error-container": "#ffdad6",
+              "outline": "#737783",
+              "on-secondary-fixed-variant": "#3a485b",
+              "on-error-container": "#93000a",
+              "surface-bright": "#f7f9fb",
+              "surface": "#f7f9fb",
+              "secondary-fixed-dim": "#b9c7df",
+              "on-error": "#ffffff",
+              "secondary-container": "#d5e3fc",
+              "background": "#f7f9fb",
+              "surface-container": "#eceef0",
+              "inverse-on-surface": "#eff1f3",
+              "surface-tint": "#255dad",
+              "surface-container-lowest": "#ffffff",
+              "on-primary-container": "#9bbdff",
+              "secondary": "#515f74",
+              "primary-container": "#004a99",
+              "on-tertiary-fixed": "#351000",
+              "surface-container-low": "#f2f4f6",
+              "inverse-primary": "#abc7ff",
+              "on-secondary-fixed": "#0d1c2e",
+              "on-tertiary-fixed-variant": "#7b2f00",
+              "outline-variant": "#c2c6d3",
+              "primary": "#00346f",
+              "tertiary": "#5f2200",
+              "surface-container-high": "#e6e8ea",
+              "on-primary-fixed": "#001b3f",
+              "on-primary-fixed-variant": "#00458f",
+              "on-surface": "#191c1e",
+              "surface-dim": "#d8dadc",
+              "on-tertiary": "#ffffff",
+              "secondary-fixed": "#d5e3fc",
+              "on-background": "#191c1e",
+              "on-tertiary-container": "#ffa77e",
+              "surface-container-highest": "#e0e3e5",
+              "on-surface-variant": "#424751"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Manrope', sans-serif; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface min-h-screen">
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col z-40 bg-slate-50 dark:bg-slate-900 h-screen w-64 border-r-0">
+<div class="px-8 py-10">
+<h1 class="text-xl font-extrabold tracking-tight text-[#00346f] dark:text-[#f7f9fb]">Architect HRM</h1>
+<p class="text-xs font-medium tracking-wide text-slate-400 mt-1 uppercase">Admin Console</p>
+</div>
+<nav class="flex-1 px-4 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="text-sm font-medium tracking-wide">Dashboard</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="group">group</span>
+<span class="text-sm font-medium tracking-wide">Employees</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#e0e3e5] dark:bg-slate-800 text-[#00346f] dark:text-[#f7f9fb] font-semibold border-r-4 border-[#00346f]" href="#">
+<span class="material-symbols-outlined" data-icon="account_tree">account_tree</span>
+<span class="text-sm font-medium tracking-wide">Structure</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="calendar_today">calendar_today</span>
+<span class="text-sm font-medium tracking-wide">Attendance</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="event_busy">event_busy</span>
+<span class="text-sm font-medium tracking-wide">Leave</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:bg-[#f2f4f6] dark:hover:bg-slate-800/50 transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="payments">payments</span>
+<span class="text-sm font-medium tracking-wide">Payroll</span>
+</a>
+</nav>
+<div class="p-6 space-y-4">
+<button class="w-full bg-primary text-on-primary py-3 rounded-md font-bold tracking-tight shadow-md flex items-center justify-center gap-2 hover:opacity-90 transition-all">
+<span class="material-symbols-outlined" data-icon="add">add</span>
+                New Hire
+            </button>
+<div class="pt-4 border-t border-outline-variant/20">
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 text-sm font-medium hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+                    Settings
+                </a>
+<a class="flex items-center gap-3 px-4 py-2 text-slate-500 text-sm font-medium hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined" data-icon="help_outline">help_outline</span>
+                    Support
+                </a>
+</div>
+</div>
+</aside>
+<!-- Main Content Shell -->
+<main class="ml-64 min-h-screen flex flex-col">
+<!-- TopAppBar -->
+<header class="sticky top-0 w-full z-30 flex justify-between items-center px-8 py-4 bg-[#f7f9fb]/80 dark:bg-slate-950/80 backdrop-blur-xl shadow-sm dark:shadow-none">
+<div class="flex items-center gap-8 flex-1">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-xl" data-icon="search">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-0 focus:ring-2 focus:ring-primary/20 rounded-lg text-sm transition-all" placeholder="Search departments, roles, or people..." type="text"/>
+</div>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#00346f] transition-opacity" href="#">Directory</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#00346f] transition-opacity" href="#">Reports</a>
+<a class="text-slate-500 dark:text-slate-400 font-medium hover:text-[#00346f] transition-opacity" href="#">Analytics</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-slate-500 hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button class="text-slate-500 hover:text-primary transition-colors p-2">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<div class="h-8 w-[1px] bg-outline-variant mx-2"></div>
+<div class="flex items-center gap-3 cursor-pointer group">
+<div class="text-right">
+<p class="text-xs font-bold text-on-surface">Alex Sterling</p>
+<p class="text-[10px] text-on-surface-variant uppercase tracking-tighter">Admin Console</p>
+</div>
+<img alt="HR Manager Profile" class="w-10 h-10 rounded-full border-2 border-white shadow-sm" data-alt="Professional portrait of a male HR manager" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAgw5KpKX73SHtpcj5Z9dKkovNSotvqPdrDioBa5NDC2iWP6ZuKOnFq889hkpT0zdpdTjMxOXwgqO7jGybkFIhSMJkPOQXv4CgZBB63ZXGRdjNplw6MXytRfr9yRIEg48owYylGcmjkK6GV4dv9df2kCMN0k9hUqTZKrtmk9WmX5Ovfy9asYE6gemcx_bQ4fjV0ZHUBvGmMT7JtI4u6XkvVBEQ0ex5pgzuxTXGy4Z56Kc5EFgog9EzKUmRp9PKGW31C83NdkhXddb8"/>
+</div>
+</div>
+</header>
+<!-- Canvas Area -->
+<div class="p-10 flex-1 bg-surface-container-low">
+<div class="max-w-7xl mx-auto">
+<!-- Header Section -->
+<div class="mb-12 flex justify-between items-end">
+<div class="space-y-2">
+<h2 class="text-4xl font-extrabold tracking-tight text-primary font-headline">Organization Structure</h2>
+<p class="text-on-surface-variant max-w-lg">A bird's-eye view of Architect HRM's structural hierarchy, leadership paths, and departmental clusters.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2.5 bg-surface-container-highest text-primary font-bold text-sm rounded-md flex items-center gap-2 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined text-lg" data-icon="filter_list">filter_list</span>
+                            Filter View
+                        </button>
+<button class="px-5 py-2.5 bg-primary text-on-primary font-bold text-sm rounded-md flex items-center gap-2 shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-lg" data-icon="file_download">file_download</span>
+                            Export Map
+                        </button>
+</div>
+</div>
+<!-- Hierarchical Map Container (Asymmetric Bento-ish Layout) -->
+<div class="grid grid-cols-12 gap-8 items-start">
+<!-- Root Node: The Leadership -->
+<div class="col-span-12 flex justify-center mb-16 relative">
+<!-- Connecting Line to children -->
+<div class="absolute bottom-[-64px] left-1/2 w-[2px] h-16 bg-outline-variant/30"></div>
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-br from-primary to-primary-container rounded-xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+<div class="relative bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10 shadow-xl w-80 text-center">
+<div class="w-20 h-20 mx-auto mb-4 rounded-full p-1 bg-gradient-to-tr from-primary to-secondary-container">
+<img alt="CEO Portrait" class="w-full h-full rounded-full object-cover border-2 border-white" data-alt="CEO portrait in a formal suit" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc8MYsP6_kd2Ozi2Aay4yMAQu8dHC9YmeofLhQLCQ5BjD4Pun-VguPMX-AZHhmCwpXn0UNgSqIkDHCPG3tzjJ6C5S4JsrenYzHyDMFvFDn85GG3ERHb7QouMiQfbPj8_cSJEBdSvXTH7Q81tWeZqkpKtw3uQtCGo6hmrSHDeOLZ6xgDchEzTNsZKa-D6y3AJprUFZiynztHkC9JrDi6EqQTBbKwfX7WNOgWMJaEcWjeer_Y_pj9PNpz_zQ2CQ5lJ3_yjDPxbqavxw"/>
+</div>
+<h3 class="text-xl font-bold text-primary font-headline">Jonathan Vance</h3>
+<p class="text-xs font-semibold text-on-surface-variant uppercase tracking-widest mb-4">Chief Executive Officer</p>
+<div class="flex justify-center gap-4 py-3 border-t border-outline-variant/10">
+<div class="text-center">
+<p class="text-lg font-extrabold text-primary leading-none">12</p>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Directs</p>
+</div>
+<div class="w-[1px] bg-outline-variant/20 h-6 my-auto"></div>
+<div class="text-center">
+<p class="text-lg font-extrabold text-primary leading-none">450</p>
+<p class="text-[10px] text-on-surface-variant font-bold uppercase">Total</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Level 2: Department Heads (Asymmetric grid) -->
+<div class="col-span-12 relative flex justify-center gap-12 pt-8">
+<!-- Horizontal Connecting Bar -->
+<div class="absolute top-0 left-[15%] right-[15%] h-[2px] bg-outline-variant/30"></div>
+<!-- Product/Tech Cluster -->
+<div class="flex flex-col items-center gap-8 relative">
+<div class="absolute -top-8 left-1/2 w-[2px] h-8 bg-outline-variant/30"></div>
+<div class="bg-surface-container-lowest p-5 rounded-lg border-l-4 border-primary w-64 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4 mb-3">
+<img alt="CTO" class="w-12 h-12 rounded-lg object-cover" data-alt="Professional woman in business attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD-DwRz9dw3awbYXxXOxH7pK50fZI-vhDbQqlVSKWnDAMdyo5D1sb4jNmvWL7Iy1U53_zgkUwkgnbWqhWbtb701ffMG2QzuIx-cUJAAbm3iHkDWMpqjKfDk42TsVIpTAnkrtZK2jK1VEA0xj5djon9MWXdpY-RtDUdAxF2L4EMtxd9acThHDmYAc1MVfUHXsupPmISlq44941geHtg-xYBUaNdJoOpRDVZ3mAS2zUOi2dHOo4v60-6CrRO9uVFzBisoANsB4Vl8ExM"/>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Elena Rodriguez</h4>
+<p class="text-[10px] font-bold text-primary-container uppercase">CTO &amp; Product Head</p>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-primary-fixed/30 py-1 px-2 rounded-full w-fit">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-[10px] font-bold text-on-primary-fixed-variant uppercase">8 Departments</span>
+</div>
+</div>
+<!-- Leaf Nodes for Tech -->
+<div class="grid grid-cols-2 gap-4">
+<div class="p-3 bg-surface-container border border-outline-variant/20 rounded-md">
+<p class="text-[11px] font-bold text-on-surface-variant uppercase mb-1">Engineering</p>
+<p class="text-xs font-medium text-on-surface">124 Members</p>
+</div>
+<div class="p-3 bg-surface-container border border-outline-variant/20 rounded-md">
+<p class="text-[11px] font-bold text-on-surface-variant uppercase mb-1">Design</p>
+<p class="text-xs font-medium text-on-surface">18 Members</p>
+</div>
+</div>
+</div>
+<!-- Revenue/Ops Cluster -->
+<div class="flex flex-col items-center gap-8 relative">
+<div class="absolute -top-8 left-1/2 w-[2px] h-8 bg-outline-variant/30"></div>
+<div class="bg-surface-container-lowest p-5 rounded-lg border-l-4 border-tertiary w-64 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4 mb-3">
+<img alt="COO" class="w-12 h-12 rounded-lg object-cover" data-alt="Man in casual professional attire" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrz2I-Ox3nvB-ZlPc6CEvooC_ohaI61KINQjRmJIrQfGztC0zmgcLUPP0FOfJcsQ6HKXUVyhvGurNPp0AyaluYW4sQ7Crj0pwT0XWGtmz556YF7e_nLPND0HZJc-x5NFYOwUsz0p2pvrW3oxk4tkjpE0nLRjkfc96kZzoIbnOYmpiVereABvoiqjZUHZLKzxMOWMNuNlynwIVnDOy38s80Wy6_b_OxmdKBAJcwOJz8R6oMn_--7fQe7BTSnOvWN6E_ChrsZSInEUg"/>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Marcus Chen</h4>
+<p class="text-[10px] font-bold text-tertiary uppercase">COO &amp; Operations</p>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-tertiary-fixed/30 py-1 px-2 rounded-full w-fit">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-[10px] font-bold text-on-tertiary-fixed-variant uppercase">5 Departments</span>
+</div>
+</div>
+<!-- Leaf Nodes for Ops -->
+<div class="w-full space-y-2">
+<div class="p-3 bg-surface-container border border-outline-variant/20 rounded-md flex justify-between items-center">
+<p class="text-[11px] font-bold text-on-surface-variant uppercase">Sales &amp; Marketing</p>
+<span class="material-symbols-outlined text-sm text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+<div class="p-3 bg-surface-container border border-outline-variant/20 rounded-md flex justify-between items-center">
+<p class="text-[11px] font-bold text-on-surface-variant uppercase">HR &amp; Legal</p>
+<span class="material-symbols-outlined text-sm text-on-surface-variant" data-icon="chevron_right">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Finance Cluster -->
+<div class="flex flex-col items-center gap-8 relative">
+<div class="absolute -top-8 left-1/2 w-[2px] h-8 bg-outline-variant/30"></div>
+<div class="bg-surface-container-lowest p-5 rounded-lg border-l-4 border-secondary w-64 shadow-sm hover:shadow-md transition-shadow">
+<div class="flex items-center gap-4 mb-3">
+<img alt="CFO" class="w-12 h-12 rounded-lg object-cover" data-alt="Business woman smiling in an office" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCatBSVQdo3HAsPryEt4lXk9IbkRWyhjjXhjKYEG7yC2yD3q0jL9JpYbK4WQYRg5w96Sew4nd2r7QlWM0O5J0_Nt-YLm5S04D3N_yEq-oLNouihdH1kTse8QqdGHae4CI6oqd3UV8AqBREmP54gnHeGXRmieHe8kAokDgeaY05I2qjYz4AR5qJvF_bkJGUIXs-Wzb4g8wbZrH1326pSmD8bkRq5Q0sEO0ITemSOaro_MkOjFR07e2itkxihKbWwNR_bAkWI94JBARA"/>
+<div>
+<h4 class="text-sm font-bold text-on-surface">Sarah Jenkins</h4>
+<p class="text-[10px] font-bold text-secondary uppercase">CFO &amp; Finance</p>
+</div>
+</div>
+<div class="flex items-center gap-2 bg-secondary-container/50 py-1 px-2 rounded-full w-fit">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-[10px] font-bold text-on-secondary-fixed-variant uppercase">3 Departments</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Summary (Bento Cards) -->
+<div class="mt-24 grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Corporate Reach</p>
+<h5 class="text-2xl font-extrabold text-primary font-headline">4 Global Offices</h5>
+<div class="mt-4 flex -space-x-2">
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="London office facade" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWO8yj9ORl8PNtMI6pghksAQEsu5Ha7X3n-ZcBletNWncZmtagG8ED1Bd01KRBYTzAjr4EIcSjDvv-G07a5Y72vuV3it1CwgOfy8HHBv7kxIww1IFjFqIGpg62DXaDY92oiX5UBIjjHILiMjPFaP4Yy6cfEc59PPGZx7Cm_KKBLpc3oOxPqNebCKJQWXu4CtSNbdUk7gW_U_NCMuawuf0vWPXX2KDjZLWhLhE--LoX8oTi-6-IP1tu4rho6DrDiv63JYV9wESVQCM" title="London"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="NYC office skyline" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDyG6wvXPAuA7VCttLlcg0MjmQ_i0prcNruz00syzkD6f0WBdHut7Bv0cRyC9c7jgXvxvDPkL2RXHEUE1_WKfJnns9ZPCGmWOVQeMTfTTkHmNXSRRUtlNhTlOlYRfteXsXNfLF5BthiUJdF5PN1A36z7isOemH6q7hV1yNWqFG5j0gEbOxhaTpzbZGWtv9R2wCfragtdLE6KuYpTOh3rrj6jtVtd4fRiUDq5RMAFmiCYDKDA-qdzoCH1ntXorEkWhUYXjmNPex7wrI" title="New York"/>
+<img class="w-8 h-8 rounded-full border-2 border-white object-cover" data-alt="Tokyo office view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC_PVE82wqNuGihMdrdaf8IBeK7AUOraca9nw3U7En2cNb87Elz1OOoG_DhYxkT_K6eYeH6vTJCbCDnDe8hrUXT9YITTGSkKoDakB-MGAFLtKdT2-XbO3iSlaLs_yI6wrxO4ufIMP4AjLxGnuL-qqinRUt_5yoBvV69knNquZBtaCSy257_VjmfIJUbaPZl_V5CELPe_a1rsq0Iz-nJz_6-51DPy-1vIC4sHaGWGRXWy2XNN-EU045XLS8UCYNbnsX-2L8nXfK8Do" title="Tokyo"/>
+<div class="w-8 h-8 rounded-full border-2 border-white bg-surface-container text-[10px] font-bold flex items-center justify-center">+1</div>
+</div>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-xl border border-outline-variant/10">
+<p class="text-xs font-bold text-on-surface-variant uppercase tracking-widest mb-1">Growth Index</p>
+<h5 class="text-2xl font-extrabold text-primary font-headline">+14% YoY</h5>
+<div class="mt-3 flex items-end gap-1 h-8">
+<div class="w-full bg-primary/20 h-3 rounded-t"></div>
+<div class="w-full bg-primary/40 h-5 rounded-t"></div>
+<div class="w-full bg-primary/60 h-4 rounded-t"></div>
+<div class="w-full bg-primary/80 h-7 rounded-t"></div>
+<div class="w-full bg-primary h-8 rounded-t"></div>
+</div>
+</div>
+<div class="md:col-span-2 bg-gradient-to-br from-[#00346f] to-[#004a99] p-6 rounded-xl text-on-primary relative overflow-hidden">
+<div class="relative z-10">
+<h5 class="text-xl font-bold font-headline mb-2">Architect Insights</h5>
+<p class="text-on-primary-container text-sm max-w-xs mb-4">You have 12 open leadership roles across Engineering and Operations. Action required for succession planning.</p>
+<button class="bg-white text-primary px-4 py-2 rounded-md text-xs font-bold flex items-center gap-2">
+                                View Vacancy Report
+                                <span class="material-symbols-outlined text-sm" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+<span class="material-symbols-outlined absolute -right-4 -bottom-4 text-9xl opacity-10 rotate-12" data-icon="account_tree">account_tree</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Floating Quick Action (FAB) - Suppressed per rules for "Structure/Details" if it were deep, but kept for main structural dashboard if applicable. Here context allows. -->
+<div class="fixed bottom-10 right-10">
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center group hover:scale-105 transition-transform">
+<span class="material-symbols-outlined text-2xl" data-icon="edit">edit</span>
+<span class="absolute right-full mr-4 bg-on-surface text-surface text-[10px] font-bold px-3 py-1 rounded-full opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Edit Structure</span>
+</button>
+</div>
+</main>
+</body></html>
